@@ -396,8 +396,12 @@ button:active {
 }
 
 .report-main h1 {
-  font-size: clamp(38px, 5vw, 68px);
+  max-width: 100%;
+  font-size: 56px;
+  line-height: 1.02;
   margin-bottom: 8px;
+  overflow-wrap: anywhere;
+  word-break: normal;
 }
 
 .report-url {
@@ -593,6 +597,10 @@ button:active {
   .report-aside {
     position: static;
   }
+
+  .report-main h1 {
+    font-size: 44px;
+  }
 }
 
 @media (max-width: 620px) {
@@ -603,6 +611,10 @@ button:active {
 
   h1 {
     font-size: 43px;
+  }
+
+  .report-main h1 {
+    font-size: 36px;
   }
 
   .lead {
