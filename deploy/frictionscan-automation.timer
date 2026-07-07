@@ -1,0 +1,11 @@
+[Unit]
+Description=Run Friction Scan automation every night
+
+[Timer]
+OnCalendar=*-*-* 04:17:00
+Persistent=true
+RandomizedDelaySec=900
+Unit=frictionscan-automation.service
+
+[Install]
+WantedBy=timers.target

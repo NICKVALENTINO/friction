@@ -1,0 +1,19 @@
+.DS_Store
+
+# Local/private runtime state
+.env
+private/
+*.sqlite
+*.sqlite-*
+
+# Smoke-test captures and generated verification artifacts
+*.headers
+*.body
+live-*.html
+admin-*.png
+live-admin-*.png
+
+# Editor/runtime noise
+*.log
+tmp/
+sessions/

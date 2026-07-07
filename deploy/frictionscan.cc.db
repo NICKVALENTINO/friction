@@ -1,0 +1,12 @@
+$TTL 300
+@       IN SOA ns1.cdns.link. hostmaster.cdns.link. (
+            2026070701 ; serial
+            3600       ; refresh
+            600        ; retry
+            1209600    ; expire
+            300        ; minimum
+)
+        IN NS  ns1.cdns.link.
+        IN NS  ns2.cdns.link.
+        IN A   104.200.67.54
+www     IN A   104.200.67.54

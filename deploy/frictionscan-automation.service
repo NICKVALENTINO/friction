@@ -1,0 +1,12 @@
+[Unit]
+Description=Friction Scan automation run
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=fricscan
+Group=fricscan
+WorkingDirectory=/home/fricscan/app/current
+Environment=FRICTIONSCAN_PRIVATE_DIR=/home/fricscan/private
+ExecStart=/usr/bin/php -d open_basedir=/home/fricscan/app/current:/home/fricscan/private:/tmp /home/fricscan/app/current/bin/run-automation.php --run
