@@ -395,13 +395,26 @@ button:active {
   font-weight: 700;
 }
 
-.report-main h1 {
-  max-width: 100%;
+.report-main h1,
+.report-title {
+  inline-size: 100%;
+  max-inline-size: 100%;
   font-size: 56px;
   line-height: 1.02;
   margin-bottom: 8px;
   overflow-wrap: anywhere;
-  word-break: normal;
+  word-break: break-word;
+  text-wrap: balance;
+}
+
+.report-main h1.report-title--long {
+  font-size: 46px;
+  line-height: 1.05;
+}
+
+.report-main h1.report-title--very-long {
+  font-size: 38px;
+  line-height: 1.08;
 }
 
 .report-url {
@@ -598,8 +611,17 @@ button:active {
     position: static;
   }
 
-  .report-main h1 {
+  .report-main h1,
+  .report-title {
     font-size: 44px;
+  }
+
+  .report-main h1.report-title--long {
+    font-size: 38px;
+  }
+
+  .report-main h1.report-title--very-long {
+    font-size: 34px;
   }
 }
 
@@ -613,8 +635,17 @@ button:active {
     font-size: 43px;
   }
 
-  .report-main h1 {
+  .report-main h1,
+  .report-title {
     font-size: 36px;
+  }
+
+  .report-main h1.report-title--long {
+    font-size: 31px;
+  }
+
+  .report-main h1.report-title--very-long {
+    font-size: 28px;
   }
 
   .lead {

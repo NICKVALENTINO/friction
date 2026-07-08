@@ -206,13 +206,23 @@ function render_report(array $report, ?string $notice, ?string $error): void
         ? 'https://' . APP_DOMAIN . '/?demo=1'
         : 'https://' . APP_DOMAIN . '/?r=' . rawurlencode((string) $report['token']);
     ?>
+    <?php
+    $displayName = $host ?: (string) $report['final_url'];
+    $nameLength = strlen($displayName);
+    $titleClass = 'report-title';
+    if ($nameLength > 36) {
+        $titleClass .= ' report-title--very-long';
+    } elseif ($nameLength > 23) {
+        $titleClass .= ' report-title--long';
+    }
+    ?>
     <section class="report-shell">
       <div class="report-main">
         <div class="report-kicker">
           <a href="/">Run another scan</a>
           <button type="button" class="copy-button" data-copy="<?php echo h($shareUrl); ?>">Copy report link</button>
         </div>
-        <h1><?php echo h($host ?: $report['final_url']); ?></h1>
+        <h1 class="<?php echo h($titleClass); ?>"><?php echo h($displayName); ?></h1>
         <p class="report-url"><?php echo h((string) $report['final_url']); ?></p>
         <?php render_messages($notice, $error); ?>
 
