@@ -80,10 +80,10 @@ $canonical = 'https://' . APP_DOMAIN . ($report ? ($isDemo ? '/?demo=1' : '/?r='
   <meta property="og:image" content="https://frictionscan.cc/assets/friction-scan-hero.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23232320'/%3E%3Cpath d='M8 17.5 13 22 24 10' fill='none' stroke='%2329a36a' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/styles.css?v=20260713b">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Friction Scan","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":[{"@type":"Offer","name":"Free scan","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Fix List","price":"49","priceCurrency":"USD"},{"@type":"Offer","name":"Landing Fix Sprint","price":"249","priceCurrency":"USD"}],"url":"https://frictionscan.cc/"}</script>
 </head>
-<body>
+<body class="friction-page">
   <header class="site-header">
     <a class="brand" href="/" aria-label="Friction Scan home">
       <span class="brand-mark" aria-hidden="true"></span>
@@ -119,58 +119,75 @@ function render_home(?string $notice, ?string $error): void
     ?>
     <section class="hero">
       <div class="hero-copy">
-        <p class="product-line">Website friction reports</p>
-        <h1>Find the spots where buyers hesitate.</h1>
-        <p class="lead">Paste a public URL. Get a short report on clarity, trust, action, offer, and technical friction. Then fix what is costing you leads.</p>
+        <p class="product-line"><span class="product-line-mark" aria-hidden="true"></span>Public page diagnostics</p>
+        <h1>Catch the hesitation before the click disappears.</h1>
+        <p class="lead">Paste a public URL. Friction Scan finds the missing explanation, weak proof, and buried next step that make a ready buyer pause.</p>
         <?php render_scan_form('https://validated.now'); ?>
         <?php render_messages($notice, $error); ?>
+        <div class="hero-facts" aria-label="Scan details">
+          <span><strong>13</strong> checks</span>
+          <span><strong>1</strong> public URL</span>
+          <span><strong>0</strong> login required</span>
+        </div>
       </div>
-      <figure class="hero-media">
-        <img src="/assets/friction-scan-hero.png" alt="Laptop showing an audit report with checklist notes on a desk">
-      </figure>
+      <div class="hero-visual">
+        <div class="hero-visual-label"><span>READOUT / 01</span><span>BUYER SIGNALS</span></div>
+        <figure class="hero-media">
+          <img src="/assets/friction-scan-hero.png" alt="Friction Scan report showing a website checklist and buyer friction findings">
+        </figure>
+        <div class="hero-note">
+          <span class="hero-note-label">THE USEFUL PART</span>
+          <strong>Find the first thing to fix.</strong>
+          <p>A short report with evidence, priorities, and a next move you can actually hand to someone.</p>
+        </div>
+      </div>
     </section>
 
     <section class="section" id="fixes">
       <div class="section-head">
-        <h2>What the scan looks for</h2>
-        <p>It is tuned for small product pages, service pages, launch pages, and local business sites.</p>
+        <div>
+          <p class="section-tag">The diagnostic</p>
+          <h2>Four questions decide whether a page earns the next click.</h2>
+        </div>
+        <p>Built for product pages, service pages, launch pages, and local business sites where a little clarity can change the whole result.</p>
       </div>
-      <div class="check-grid">
+      <div class="signal-list">
         <article>
-          <h3>Clarity</h3>
-          <p>Does the first screen explain who it is for and why they should care?</p>
+          <span class="signal-number">01</span>
+          <div><h3>Can I tell what this is?</h3><p>Does the first screen explain who it is for and why they should care?</p></div>
         </article>
         <article>
-          <h3>Action</h3>
-          <p>Can a ready buyer call, book, quote, start, or pay without searching?</p>
+          <span class="signal-number">02</span>
+          <div><h3>Can I act without hunting?</h3><p>Can a ready buyer call, book, quote, start, or pay without searching?</p></div>
         </article>
         <article>
-          <h3>Trust</h3>
-          <p>Are reviews, guarantees, proof, policies, and credentials close to the decision?</p>
+          <span class="signal-number">03</span>
+          <div><h3>Do I have a reason to trust it?</h3><p>Are reviews, guarantees, proof, policies, and credentials close to the decision?</p></div>
         </article>
         <article>
-          <h3>Offer</h3>
-          <p>Are price expectations, timing, and objections handled before the buyer leaves?</p>
+          <span class="signal-number">04</span>
+          <div><h3>What happens after I say yes?</h3><p>Are price expectations, timing, and objections handled before the buyer leaves?</p></div>
         </article>
       </div>
     </section>
 
     <section class="section split" id="pricing">
       <div>
-        <h2>Free scan. Paid fixes when the report hurts.</h2>
-        <p>The free report is enough to move. If you want the fixes written and prioritized, request a paid pass.</p>
+        <p class="section-tag">The handoff</p>
+        <h2>Free scan. Paid fixes when you need a second set of eyes.</h2>
+        <p>The report tells you where the page is losing momentum. Choose a practical next step when you want the fixes written, prioritized, or handled for you.</p>
       </div>
       <div class="price-list">
         <div class="price-row">
-          <span>Fix List</span>
+          <span><strong>Fix List</strong><small>Prioritized copy and page changes.</small></span>
           <strong>$49</strong>
         </div>
         <div class="price-row">
-          <span>Landing Fix Sprint</span>
+          <span><strong>Landing Fix Sprint</strong><small>A focused done-for-you cleanup.</small></span>
           <strong>$249</strong>
         </div>
         <div class="price-row">
-          <span>Agency Partner Queue</span>
+          <span><strong>Agency Partner Queue</strong><small>Bring repeat client work into a faster review loop.</small></span>
           <strong>Custom</strong>
         </div>
       </div>
@@ -178,20 +195,21 @@ function render_home(?string $notice, ?string $error): void
 
     <section class="section split" id="privacy">
       <div>
-        <h2>Privacy for quick scans.</h2>
-        <p>Friction Scan checks public pages only, keeps reports tied to unguessable links, and uses request details only to generate the report or respond to a fix request.</p>
+        <p class="section-tag">The boundary</p>
+        <h2>Useful evidence without asking for the keys to the kingdom.</h2>
+        <p>Friction Scan checks public pages only. Reports use unguessable links, and request details are used to generate the report or respond to a fix request.</p>
       </div>
       <div class="price-list">
         <div class="price-row">
-          <span>Public-page scans</span>
+          <span><strong>Public-page scans</strong><small>No login pages, localhost, or private network targets.</small></span>
           <strong>No login</strong>
         </div>
         <div class="price-row">
-          <span>Report links</span>
+          <span><strong>Report links</strong><small>Shareable when you need another person to review the page.</small></span>
           <strong>Shareable</strong>
         </div>
         <div class="price-row">
-          <span>Fix requests</span>
+          <span><strong>Fix requests</strong><small>Kept in the private fulfillment workflow.</small></span>
           <strong>Private</strong>
         </div>
       </div>
@@ -219,6 +237,7 @@ function render_report(array $report, ?string $notice, ?string $error): void
     <section class="report-shell">
       <div class="report-main">
         <div class="report-kicker">
+          <span class="report-kicker-label">Public page report</span>
           <a href="/">Run another scan</a>
           <button type="button" class="copy-button" data-copy="<?php echo h($shareUrl); ?>">Copy report link</button>
         </div>
@@ -314,14 +333,15 @@ function render_scan_form(string $example): void
     ?>
     <form method="post" class="scan-form" id="scan">
       <input type="hidden" name="action" value="scan">
-      <label for="scan-url">Website URL</label>
+      <div class="scan-form-heading"><span>INPUT / PUBLIC URL</span><span>FREE FIRST PASS</span></div>
+      <label for="scan-url">Page to inspect</label>
       <div class="scan-control">
         <input id="scan-url" name="url" type="text" inputmode="url" autocomplete="url" placeholder="<?php echo h($example); ?>" required>
-        <button type="submit">Start free scan</button>
+        <button type="submit">Scan this page <span aria-hidden="true">-></span></button>
       </div>
       <p>Public pages only. No login pages, localhost, or private network targets.</p>
       <div class="scan-actions">
-        <a href="/?demo=1">View sample report</a>
+        <a href="/?demo=1">Open a sample report <span aria-hidden="true">-></span></a>
       </div>
     </form>
     <?php
